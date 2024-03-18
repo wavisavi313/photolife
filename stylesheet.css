@@ -1,1 +1,94 @@
+body{
+  background-color:rgb(33, 32, 32)/*全体の背景色*/
+}
 
+.header{
+  color:rgb(248, 244, 239)/*全フォントの色指定*/
+}
+
+.header-logo{
+  float: left;/*Photolifeを右端に配置*/
+  font-size:35px;/* PhotoLifeの文字サイズ指定*/
+  padding:40px 200px 0px 50px;/*位置配置*/
+}
+
+.header-list {
+  list-style-type: none;
+  font-size: 20px;/* 3項目の文字サイズ設定 */
+  margin: 0;
+  padding-top:30px;
+  padding-right: 30px;
+  float: right; /* 右寄せ */
+}
+
+.header-list ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* 各項目のスタイルを設定 */
+.subtitle {
+  display: inline-block;
+  margin-left: 20px; /* 各項目の間隔 */
+  position: relative; /* 追加：子要素の絶対位置指定の基準を設定 */
+}
+
+/* サブメニューのスタイルを設定 */
+.submenu {
+  list-style-type: none;
+  display: none; /* 初期状態では非表示 */
+  position: absolute;
+  top: 100%; /* 親要素の下に配置 */
+  left: 0;
+}
+
+/* ホバー時のサブメニューの表示設定 */
+.subtitle:hover .submenu {
+  display: block;
+}
+
+/* 各リンクのスタイルを設定 */
+.subtitle a {
+  color: rgb(248, 244, 239);
+  text-decoration: none;
+}
+
+.subtitle a[href="https://instagram.com/sota7321?igshid=OGQ5ZDc2ODk2ZA%3D%3D&utm_source=qr"] {
+  color: rgb(248, 244, 239);
+  text-decoration: none;
+}
+
+.slideshow-container {
+  position: relative;
+  max-width: 700px;
+  padding-top: 300px;
+  margin: auto;
+}
+
+.mySlides {
+  display: none;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 70%;/*矢印のたかさ調整*/
+  width: auto;
+  padding:30px;
+  margin-top: -40px;
+  color: white;
+  font-weight: bold;
+  font-size: 30px;/*矢印の大きさ調整*/
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);}
