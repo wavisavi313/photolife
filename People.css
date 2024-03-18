@@ -1,0 +1,93 @@
+/* 全体の背景色を設定 */
+body {
+  background-color: rgb(230, 228, 228);
+}
+
+/* ヘッダー全体のフォント色を設定 */
+.header {
+  color: rgb(33, 32, 32);
+}
+
+/* ロゴの配置とスタイルを設定 */
+.header-logo {
+  float: left;
+  font-size: 40px;
+  padding: 40px 200px 0px 50px;
+}
+
+.header-logo a {
+  text-decoration: none; /* 下線を外す */
+  color: black; /* 常に黒にする */
+}
+
+/* ヘッダーリストのスタイルを設定 */
+.header-list {
+  list-style-type: none;
+  font-size: 20px;/* 3項目の文字サイズ設定 */
+  margin: 0;
+  padding-top:30px;
+  padding-right: 30px;
+  float: right; /* 右寄せ */
+}
+
+.header-list ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* 各項目のスタイルを設定 */
+.subtitle {
+  display: inline-block;
+  margin-left: 20px; /* 各項目の間隔 */
+  position: relative; /* 追加：子要素の絶対位置指定の基準を設定 */
+}
+
+/* サブメニューのスタイルを設定 */
+.submenu {
+  list-style-type: none;
+  display: none; /* 初期状態では非表示 */
+  position: absolute;
+  top: 100%; /* 親要素の下に配置 */
+  left: 0;
+}
+
+/* ホバー時のサブメニューの表示設定 */
+.subtitle:hover .submenu {
+  display: block;
+}
+
+/* 各リンクのスタイルを設定 */
+.subtitle a {
+  color: rgb(33, 32, 32);
+  text-decoration: none;
+}
+
+.subtitle a[href="https://instagram.com/sota7321?igshid=OGQ5ZDc2ODk2ZA%3D%3D&utm_source=qr"] {
+  color: rgb(33, 32, 32);
+  text-decoration: none;
+}
+
+/* メイン画像のスタイルを設定 */
+.main-img img {
+  padding: 70px 0px 30px 0px;
+}
+
+/* カテゴリのスタイルを設定 */
+.categoly {
+  text-align: center;
+  font-size: 50px;
+  padding: 20px 50px 30px 50px;
+}
+
+/* サブ画像のスタイルを設定 */
+.sub-img {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.sub-img img {
+  width: 380px;
+  padding: 50px 10px 40px 30px;
+}
