@@ -1,21 +1,92 @@
 <!DOCTYPE html>
 <html>
-  <head>   
-    <meta charset="utf-8">
-    <title>PHOTOLIFE</title>
-    <link rel="stylesheet" href="stylesheet.css">
-  </head>
-  <body> 
-   <div class="header">
-      <div class="header-logo">Photo Life<div>
-      <div class="header-list">
-        <ul>
-          <li>Photo</li>
-          <li>Instagram</li>
-          <li>Information</li>
-        </ul>
-    <div class="main-img">
-      <img src="">
+<head>   
+  <meta charset="utf-8">
+  <title>PHOTOLIFE</title>
+  <link rel="stylesheet" href="stylesheet.css">
+</head>
+
+<body> 
+  <div class="header">
+    <div class="header-logo">Photo Life</div>
+    <div class="header-list">
+      <ul>
+        <li class="subtitle" id="photo">Photography <!-- クリックで表示されるトリガー -->
+          <ul class="submenu"> <!-- サブメニュー -->
+            <li><a href="Street.html">Street</a></li>
+            <li><a href="People.html">People</a></li>
+          </ul>
+        </li>        
+        <li class="subtitle"><a href="https://instagram.com/sota7321?igshid=OGQ5ZDc2ODk2ZA%3D%3D&utm_source=qr">Instagram</a></li>
+        <li class="subtitle"><a href="">Information</a></li>
+      </ul>
     </div>
-  </body>
+  </div>
+  
+  <!-- スライドショーの画像を表示する要素 -->
+  <div class="slideshow-container">
+    <div class="mySlides">
+      <img src="https://github.com/fleap0817/photolife/blob/main/TOPslide-1.JPG?raw=true" style="width:100%">
+    </div>
+  
+    <div class="mySlides">
+      <img src="https://github.com/fleap0817/photolife/blob/main/TOPslide-2.JPG?raw=true" style="width:100%">
+    </div>
+  
+    <div class="mySlides">
+      <img src="https://github.com/fleap0817/photolife/blob/main/TOPslide-3.JPG?raw=true" style="width:100%">
+    </div>
+  
+    <div class="mySlides">
+      <img src="https://github.com/fleap0817/photolife/blob/main/TOPslide-4.JPG?raw=true" style="width:100%">
+    </div>
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+
+  <script>
+    // Photo下のsubmenueの設定
+    document.addEventListener("DOMContentLoaded", function() {
+      var photoTrigger = document.getElementById('photo');
+      var submenu = photoTrigger.querySelector('.submenu');
+  
+      photoTrigger.addEventListener('click', function() {
+        if (submenu.style.display === 'none') {
+          submenu.style.display = 'block';
+        } else {
+          submenu.style.display = 'none';
+        }
+      });
+  
+      // スライドショー設定
+      var slideIndex = 1;
+      showSlides(slideIndex);
+  
+      // 自動でスライドを進める関数
+      function autoSlide() {
+        plusSlides(1);
+      }
+  
+      // 2秒ごとにautoSlide関数を呼び出して自動スライドを実行
+      setInterval(autoSlide, 5000);
+  
+      // スライドを変更する関数
+      function plusSlides(n) {
+        showSlides(slideIndex += n);
+      }
+  
+      function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        slides[slideIndex-1].style.display = "block";
+      }
+    });
+  </script>
+</body>
 </html>
+
