@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>   
   <meta charset="utf-8">
   <title>PHOTOLIFE</title>
@@ -7,90 +7,89 @@
 </head>
 
 <body> 
-  <div class="header">
-    <div class="header-logo">Photo Life</div>
-    <div class="header-list">
-      <ul>
-        <li class="subtitle" id="photo">Photography <!-- クリックで表示されるトリガー -->
-          <ul class="submenu"> <!-- サブメニュー -->
-            <li><a href="Street.html">Street</a></li>
-            <li><a href="People.html">People</a></li>
-          </ul>
-        </li>        
-        <li class="subtitle"><a href="https://instagram.com/sota7321?igshid=OGQ5ZDc2ODk2ZA%3D%3D&utm_source=qr">Instagram</a></li>
-        <li class="subtitle"><a href="">Information</a></li>
-      </ul>
-    </div>
-  </div>
-  
-  <!-- スライドショーの画像を表示する要素 -->
-  <div class="slideshow-container">
-    <div class="mySlides">
-      <img src="https://github.com/fleap0817/photolife/blob/main/TOPslide-1.JPG?raw=true" style="width:100%">
-    </div>
-  
-    <div class="mySlides">
-      <img src="https://github.com/fleap0817/photolife/blob/main/TOPslide-2.JPG?raw=true" style="width:100%">
-    </div>
-  
-    <div class="mySlides">
-      <img src="https://github.com/fleap0817/photolife/blob/main/TOPslide-3.JPG?raw=true" style="width:100%">
-    </div>
-  
-    <div class="mySlides">
-      <img src="https://github.com/fleap0817/photolife/blob/main/TOPslide-4.JPG?raw=true" style="width:100%">
-    </div>
-    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1)">&#10095;</a>
-  </div>
+  <div class="container">
+    <header class="header">
+      <div class="header__inner">
+        <h1 class="header__title header-title">
+          <a href="pagetitle">PHOTOLIFE</a>
+        </h1>
 
+        <nav class="header__nav nav" id="js-nav">
+          <ul class="nav__items nav-items">
+            <li class="nav-items__item"><a href="#">Home</a></li>
+            <li class="nav-items__item"><a href="#">Gallery</a></li>
+            <li class="nav-items__item"><a href="https://instagram.com/sota7321?igshid=OGQ5ZDc2ODk2ZA%3D%3D&utm_source=qr">Instagram</a></li>
+            <li class="nav-items__item"><a href="#">About</a></li>
+          </ul>
+        </nav>
+
+        <button class="header__hamburger hamburger" id="js-hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+    
+    <main>
+      <div class="slideshow-container">
+        <div class="mySlides">
+          <img src="https://github.com/fleap0817/photolife/blob/main/slide1.JPG?raw=true" style="width:100%">
+        </div>
+      
+        <div class="mySlides">
+          <img src="https://github.com/fleap0817/photolife/blob/main/slide2.JPG?raw=true" style="width:100%">
+        </div>
+      
+        <div class="mySlides">
+          <img src="https://github.com/fleap0817/photolife/blob/main/slide3.JPG?raw=true" style="width:100%">
+        </div>
+      
+        <div class="mySlides">
+          <img src="https://github.com/fleap0817/photolife/blob/main/slide4.JPG?raw=true" style="width:100%">
+        </div>
+
+        <div class="mySlides">
+          <img src="https://github.com/fleap0817/photolife/blob/main/slide5.JPG?raw=true" style="width:100%">
+        </div>
+
+        <div class="mySlides">
+          <img src="https://github.com/fleap0817/photolife/blob/main/slide6.JPG?raw=true" style="width:100%">
+        </div>
+    </main>
+   
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script>
-    // Photo下のsubmenueの設定
-    document.addEventListener("DOMContentLoaded", function() {
-      var photoTrigger = document.getElementById('photo');
-      var submenu = photoTrigger.querySelector('.submenu');
-  
-      // タップイベントをリッスン
-      photoTrigger.addEventListener('click', toggleSubmenu);
-      photoTrigger.addEventListener('touchstart', toggleSubmenu);
-  
-      function toggleSubmenu() {
-        if (submenu.style.display === 'none' || submenu.style.display === '') {
-          submenu.style.display = 'block';
-        } else {
-          submenu.style.display = 'none';
-        }
-      }
-  
-      // スライドショー設定
-      var slideIndex = 1;
-      showSlides(slideIndex);
-  
-      // 自動でスライドを進める関数
-      function autoSlide() {
-        plusSlides(1);
-      }
-  
-      // 2秒ごとにautoSlide関数を呼び出して自動スライドを実行
-      setInterval(autoSlide, 5000);
-  
-      // スライドを変更する関数
-      function plusSlides(n) {
-        showSlides(slideIndex += n);
-      }
-  
-      function showSlides(n) {
-        var i;
-        var slides = document.getElementsByClassName("mySlides");
-        if (n > slides.length) { slideIndex = 1 }
-        if (n < 1) { slideIndex = slides.length }
-        for (i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none";
-        }
-        slides[slideIndex - 1].style.display = "block";
-      }
+    $(document).ready(function() {
+      const ham = $('#js-hamburger');
+      const nav = $('#js-nav');
+      
+      ham.on('click', function () { //ハンバーガーメニューをクリックしたら
+        ham.toggleClass('active'); // ハンバーガーメニューにactiveクラスを付け外し
+        nav.toggleClass('active'); // ナビゲーションメニューにactiveクラスを付け外し
+      });
     });
+
+    // スライドショー設定
+    var slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {slideIndex = 1}
+      slides[slideIndex-1].style.display = "block";
+      setTimeout(showSlides, 5000); // Change image every 5 seconds
+    }
+
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
   </script>
+  
 </body>
 </html>
-
