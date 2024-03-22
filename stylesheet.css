@@ -53,6 +53,7 @@ main {
 .header-title a {
   color: black; /* リンクの文字色を黒に設定 */
   text-decoration: none; /* 下線を削除 */
+  font-size: 45px; /* ページタイトルの文字サイズを変更 */
 }
 
 @media screen and (min-width: 1200px) {
@@ -77,7 +78,7 @@ main {
   width: 100%;
   height: 100vh;
   transform: translateX(100%);
-  background-color:rgb(116, 112, 112);
+  background-color:rgb(137, 132, 132);/* ハンバーガーメニューの内側色 */
   transition: ease .4s;
 }
 
@@ -111,8 +112,6 @@ main {
   transform: translate(-50%, -50%);
   padding: 0;
 }
-
-
 
 @media screen and (min-width: 1200px) {
   .nav-items {
@@ -169,7 +168,7 @@ main {
 .hamburger span {
   width: 100%;
   height: 1px;
-  background-color: #121212da;
+  background-color: #000000da;/* ハンバーガーメニューの線色 */
   position: relative;
   transition: ease .4s;
   display: block;
