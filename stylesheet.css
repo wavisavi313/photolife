@@ -125,13 +125,13 @@ main {
   }
 }
 
-/* ナビのリンク */
+/* ナビ内のフォント調整 */
 .nav-items__item a {
-  color: black;
+  color: rgb(232, 228, 228);
   width: 100%;
   display: block;
   text-align: center;
-  font-size: 20px;
+  font-size: 30px;
   margin-bottom: 24px;
 }
 
@@ -170,7 +170,7 @@ main {
 .hamburger span {
   width: 100%;
   height: 1px;
-  background-color: #000000da;/* ハンバーガーメニューの線色 */
+  background-color: #4d4c4cda;/* ハンバーガーメニューの線色 */
   position: relative;
   transition: ease .4s;
   display: block;
