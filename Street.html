@@ -1,59 +1,78 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>   
   <meta charset="utf-8">
   <title>PHOTOLIFE</title>
   <link rel="stylesheet" href="Street.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js" type="text/javascript"></script>
 </head>
 
 <body> 
-  <div class="header">
-    <div class="header-logo"><a href="index.html">Photo Life</a></div>
-    <div class="header-list">
-      <ul>
-        <li class="subtitle" id="photo">Photography <!-- クリックで表示されるトリガー -->
-          <ul class="submenu"> <!-- サブメニュー -->
-            <li><a href="Street.html">Street</a></li>
-            <li><a href="People.html">People</a></li>
-            </ul>
-            </li>        
-            <li class="subtitle"><a href="https://instagram.com/sota7321?igshid=OGQ5ZDc2ODk2ZA%3D%3D&utm_source=qr">Instagram</a></li>
-            <li class="subtitle"><a href="">Information</a></li>
-          </li>
-      </ul>
-    </div>
-  </div>
-  
-  <div class="main-img">
-    <img src="https://github.com/fleap0817/photolife/blob/main/street1.png?raw=true">
-  </div>
-  
-  <div class="categoly">Street Photography</div>
-  
-  <div class="sub-img">
-    <img src="https://github.com/fleap0817/photolife/blob/main/street3.JPG?raw=true">
-    <img src="https://github.com/fleap0817/photolife/blob/main/street5.JPG?raw=true">
-    <img src="https://github.com/fleap0817/photolife/blob/main/street4.JPG?raw=true">
-    <img src="https://github.com/fleap0817/photolife/blob/main/street6.JPG?raw=true">
-    <img src="https://github.com/fleap0817/photolife/blob/main/street7.JPG?raw=true">
-    <img src="https://github.com/fleap0817/photolife/blob/main/street8.JPG?raw=true">
-  </div>
+  <div class="container">
+    <header class="header">
+      <div class="header__inner">
+        <h1 class="header__title header-title">
+          <a href="pagetitle">PHOTOLIFE</a>
+        </h1>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      var photoTrigger = document.getElementById('photo'); // Photoトリガーの要素を取得
-      var submenu = photoTrigger.querySelector('.submenu'); // サブメニューを取得
+        <nav class="header__nav nav" id="js-nav">
+          <ul class="nav__items nav-items">
+            <li class="nav-items__item"><a href="#">Street</a></li>
+            <li class="nav-items__item"><a href="#">Urban</a></li>
+            <li class="nav-items__item"><a href="#">People</a></li>
+            <li class="nav-items__item"><a href="https://instagram.com/sota7321?igshid=OGQ5ZDc2ODk2ZA%3D%3D&utm_source=qr">Instagram</a></li>
+          </ul>
+        </nav>
 
-      photoTrigger.addEventListener('click', function() { // Photoトリガーがクリックされた時のイベントを追加
-        if (submenu.style.display === 'none') { // サブメニューが非表示の場合
-          submenu.style.display = 'block'; // サブメニューを表示する
-        } else {
-          submenu.style.display = 'none'; // それ以外の場合は非表示にする
-        }
+        <button class="header__hamburger hamburger" id="js-hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+    
+    <main>
+      <div class="body-img">
+        <a href="https://github.com/fleap0817/photolife/blob/main/slide4.JPG?raw=true" data-lightbox="group">
+          <img src="https://github.com/fleap0817/photolife/blob/main/slide4.JPG?raw=true" alt="Image 1">
+        </a>
+
+        <a href="https://github.com/fleap0817/photolife/blob/main/TOPslide-1.JPG?raw=true" data-lightbox="group">
+          <img src="https://github.com/fleap0817/photolife/blob/main/TOPslide-1.JPG?raw=true" alt="Image 1">
+        </a>
+
+        <a href="https://github.com/fleap0817/photolife/blob/main/slide10.JPG?raw=true" data-lightbox="group">
+          <img src="https://github.com/fleap0817/photolife/blob/main/slide10.JPG?raw=true" alt="Image 2">
+        </a>
+
+        <a href="https://github.com/fleap0817/photolife/blob/main/street3.JPG?raw=true" data-lightbox="group">
+            <img src="https://github.com/fleap0817/photolife/blob/main/street3.JPG?raw=true" alt="Image 1">
+        </a>
+  
+        <a href="https://github.com/fleap0817/photolife/blob/main/slide9.JPG?raw=true" data-lightbox="group">
+            <img src="https://github.com/fleap0817/photolife/blob/main/slide9.JPG?raw=true" alt="Image 2">
+        </a>
+  
+        <a href="https://github.com/fleap0817/photolife/blob/main/street8.JPG?raw=true" data-lightbox="group">
+            <img src="https://github.com/fleap0817/photolife/blob/main/street8.JPG?raw=true" alt="Image 2">
+        </a>
+      </div>
+    </main>
+
+    <script>
+      $(document).ready(function() {
+        const ham = $('#js-hamburger');
+        const nav = $('#js-nav');
+        
+        ham.on('click', function () { //ハンバーガーメニューをクリックしたら
+          ham.toggleClass('active'); // ハンバーガーメニューにactiveクラスを付け外し
+          nav.toggleClass('active'); // ナビゲーションメニューにactiveクラスを付け外し
+        });
       });
-    });
-  </script>
+    </script>
+  </div>
 </body>
 </html>
-
-  
