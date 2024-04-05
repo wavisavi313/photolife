@@ -1,93 +1,228 @@
-/* 全体の背景色を設定 */
-body {
-  background-color: rgb(230, 228, 228);
+/* 調整用スタイル */
+
+a {
+  text-decoration: none;
 }
 
-/* ヘッダー全体のフォント色を設定 */
+ul,
+li {
+  list-style: none;
+}
+
+
+main {
+  background-color: rgb(255, 255, 255);
+  display: flex;
+}
+
+.body-img {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 50px; /* 1列目と2列目の間のスペースを増やす */
+  grid-row-gap: 50px; /* 行間のスペース */
+  margin-top: 120px;/*画像全体を上下に位置調整*/
+  padding: 20px;/*画像全体が中央による*/
+}
+
+.body-img a {
+  display: flex;
+  align-items: center; /* 上下中央揃え */
+  justify-content: center; /* 左右中央揃え */
+}
+
+.body-img img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* ヘッダー */
 .header {
-  color: rgb(33, 32, 32);
+  background-color:rgb(255, 255, 255);
+  margin-top: -30px; /* header全体の高さ調整 */
+  width: 100%;/* 変えない */
+  height: 200px;/* ヘッダーmenuの帯幅調整 */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
 }
 
-/* ロゴの配置とスタイルを設定 */
-.header-logo {
-  float: left;
-  font-size: 40px;
-  padding: 40px 200px 0px 50px;
+.header__inner {
+  padding: 0px 10px 0px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: inherit;
+  position: relative;
 }
 
-.header-logo a {
-  text-decoration: none; /* 下線を外す */
-  color: black; /* 常に黒にする */
+
+/* ヘッダーのロゴ部分 */
+.header__title {
+  padding-top:100px;/* Photolifeの高さ調整 */
+  padding-bottom: 120px;/* Photolifeの下幅調整 */
+  padding-left: 15px;
 }
 
-/* ヘッダーリストのスタイルを設定 */
-.header-list {
-  list-style-type: none;
-  font-size: 20px;/* 3項目の文字サイズ設定 */
-  margin: 0;
-  padding-top:30px;
-  padding-right: 30px;
-  float: right; /* 右寄せ */
+.header-title a {
+  color: rgb(81, 77, 77);
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif; /* Montserratフォントを適用 */
+  font-weight: 300; /* フォントのウェイトを調整（300は細めのウェイト） */
+  font-size: 25px;
+  }
+
+
+@media screen and (min-width: 1200px) {
+  .header__title {
+    width: 120px;
+  }
 }
 
-.header-list ul {
-  list-style-type: none;
-  margin: 0;
+.header__title img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* ヘッダーのナビ部分 */
+
+.header__nav {/* ハンバーガーメニューの設定 */
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  transform: translateX(100%);
+  background-color:rgb(137, 132, 132);/* ハンバーガーメニューの内側色 */
+  transition: ease .4s;
+}
+
+
+@media screen and (min-width: 1200px) {
+  .header__nav {
+    position: static;
+    transform: initial;
+    background-color: inherit;
+    height: inherit;
+    display: flex;
+    justify-content: end;
+    width: 40%;/* PC版submenuの幅設定 */
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .nav__items {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: initial;
+    justify-content: space-between;
+  }
+}
+
+.nav-items {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   padding: 0;
 }
 
-/* 各項目のスタイルを設定 */
-.subtitle {
-  display: inline-block;
-  margin-left: 20px; /* 各項目の間隔 */
-  position: relative; /* 追加：子要素の絶対位置指定の基準を設定 */
+@media screen and (min-width: 1200px) {
+  .nav-items {
+    position: inherit;
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+
+  }
 }
 
-/* サブメニューのスタイルを設定 */
-.submenu {
-  list-style-type: none;
-  display: none; /* 初期状態では非表示 */
-  position: absolute;
-  top: 100%; /* 親要素の下に配置 */
-  left: 0;
+/* ナビ内のフォント調整 */
+.nav-items__item a {
+  color: rgb(232, 228, 228);
+  width: 100%;
+  display: block;
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 24px;
 }
 
-/* ホバー時のサブメニューの表示設定 */
-.subtitle:hover .submenu {
+.nav-items__item:last-child a {
+  margin-bottom: 0;
+}
+
+@media screen and (min-width: 1200px) {
+  .nav-items__item a {
+    margin-bottom: 0;
+  }
+}
+
+
+/* ハンバーガーメニュー */
+
+.header__hamburger {
+  width: 48px;
+  height: 100%;
+
+}
+
+.hamburger {
+  background-color: transparent;
+  border-color: transparent;
+  z-index: 9999;
+}
+
+@media screen and (min-width: 1200px) {
+  .hamburger {
+    display: none;
+  }
+}
+
+/* ハンバーガーメニューの線 */
+.hamburger span {
+  width: 100%;
+  height: 1px;
+  background-color: #000000da;/* ハンバーガーメニューの線色 */
+  position: relative;
+  transition: ease .4s;
   display: block;
 }
 
-/* 各リンクのスタイルを設定 */
-.subtitle a {
-  color: rgb(33, 32, 32);
-  text-decoration: none;
+.hamburger span:nth-child(1) {
+  top: 0;
 }
 
-.subtitle a[href="https://instagram.com/sota7321?igshid=OGQ5ZDc2ODk2ZA%3D%3D&utm_source=qr"] {
-  color: rgb(33, 32, 32);
-  text-decoration: none;
+.hamburger span:nth-child(2) {
+  margin: 8px 0;
 }
 
-/* メイン画像のスタイルを設定 */
-.main-img img {
-  padding: 70px 0px 30px 0px;
+.hamburger span:nth-child(3) {
+  top: 0;
 }
 
-/* カテゴリのスタイルを設定 */
-.categoly {
-  text-align: center;
-  font-size: 50px;
-  padding: 20px 50px 30px 50px;
+
+/* ハンバーガーメニュークリック後のスタイル */
+.header__nav.active {
+  transform: translateX(0);
 }
 
-/* サブ画像のスタイルを設定 */
-.sub-img {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+.hamburger.active span:nth-child(1) {
+  top: 5px;
+  transform: rotate(45deg);
 }
 
-.sub-img img {
-  width: 380px;
-  padding: 50px 10px 40px 30px;
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+
 }
+
+.hamburger.active span:nth-child(3) {
+  top: -13px;
+  transform: rotate(-45deg);
+}
+
